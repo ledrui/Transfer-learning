@@ -244,7 +244,7 @@ with tf.Session() as sess:
             start_time = time.time()
             if (i+1)%5==0:
                 rate=rate*0.8
-    saver.save(sess, 'checkpoints/model_1.ckpt')
+    saver.save(sess, 'checkpoints/model.ckpt')
     print("Model saved")
 
 # Tetsting the model
@@ -256,6 +256,6 @@ for i in range(n_test):
 
 #Run testing
 with tf.Session() as sess:
-    saver.restore(sess, 'checkpoints/model_2.1.ckpt')
+    saver.restore(sess, 'checkpoints/model.ckpt')
     test_accuracy = evaluate(X_test_prep, y_test, sess)
     print("Test Accuracy = {:.3f}".format(test_accuracy))
